@@ -36,6 +36,22 @@ D3DApp::D3DApp( HINSTANCE hInstance
 	, mWinCaption(winCaption)
 {
 	srand((unsigned int)time(0));
+
+	// Standard input/output/error file pointers
+	FILE *fpStdIn, *fpStdOut, *fpStdErr;
+
+#if defined(DEBUG) | defined(_DEBUG)
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
+	if (AllocConsole())
+	{
+		// Assign the stdin/stdout/stderr streams to the newly created console
+		_tfreopen_s(&fpStdIn, _T("CONIN$"), _T("r"), stdin);
+		_tfreopen_s(&fpStdOut, _T("CONOUT$"), _T("w"), stdout);
+		_tfreopen_s(&fpStdErr, _T("CONOUT$"), _T("w"), stderr);
+	}
+#endif
+
 	InitMainWindow();
 	InitDirect3D();
 }
