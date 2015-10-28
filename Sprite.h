@@ -13,7 +13,7 @@ public:
 
 	virtual ~Sprite();
 
-	virtual void Update(){}
+	virtual void Update(float dt){}
 	void Draw();
 
 private:
