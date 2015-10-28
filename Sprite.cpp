@@ -26,6 +26,7 @@ Sprite::Sprite(std::string path, float x, float y, float z)
 
 Sprite::~Sprite()
 {
+
 }
 
 void Sprite::Draw()

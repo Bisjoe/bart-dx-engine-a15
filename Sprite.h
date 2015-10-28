@@ -13,10 +13,10 @@ public:
 
 	virtual ~Sprite();
 
-	virtual void Update(){}
+	virtual void Update(float dt){}
 	void Draw();
 
-private:
+protected:
 	
 	std::string path;
 	IDirect3DTexture9* texture;
