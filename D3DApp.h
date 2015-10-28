@@ -24,7 +24,7 @@ public:
 	virtual bool CheckDeviceCaps()	{ return true; }
 	virtual void OnLostDevice();
 	virtual void OnResetDevice();
-	virtual void Update(float dt);
+	void Update(float dt);
 	virtual void PreDraw();
 	virtual void Draw();
 	virtual void PostDraw();
