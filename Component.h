@@ -1,6 +1,8 @@
 #pragma once
+
 #include<vector>
 #include <string>
+
 class Component
 {
 	friend class  D3DApp;

@@ -2,6 +2,7 @@
 
 #include "D3DUtils.h"
 #include "Component.h"
+
 class D3DApp
 {
 public:
@@ -28,7 +29,6 @@ public:
 	virtual void PreDraw();
 	virtual void Draw();
 	virtual void PostDraw();
-
 	virtual void InitMainWindow();
 	virtual void InitDirect3D();
 	virtual int Run();
