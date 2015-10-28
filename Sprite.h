@@ -21,6 +21,7 @@ public:
 
 protected:
 	
+
 	std::string path;
 	IDirect3DTexture9* texture;
 	D3DXVECTOR3 position;
