@@ -1,5 +1,7 @@
 #include "Sprite.h"
 
+
+
 Sprite::Sprite()
 	: center(0.f, 0.f, 0.f)
 	, position(0.f, 0.f, 0.f)
@@ -19,6 +21,7 @@ Sprite::Sprite(std::string path, float x, float y, float z)
 	: center(0.f, 0.f, 0.f)
 	, position(x, y, z)
 {
+	HR(D3DXCreateTextureFromFile(gD3DDevice, path.c_str(), &texture));
 }
 
 Sprite::~Sprite()
