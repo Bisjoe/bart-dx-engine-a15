@@ -14,14 +14,14 @@ Sprite::Sprite(std::string path)
 	: center(0.f,0.f,0.f)
 	, position(0.f,0.f, 0.f)
 {
-	HR(D3DXCreateTextureFromFile(gD3DDevice, path.c_str(), &texture));
+	SetSprite(path);
 }
 
 Sprite::Sprite(std::string path, float x, float y, float z)
 	: center(0.f, 0.f, 0.f)
 	, position(x, y, z)
 {
-	HR(D3DXCreateTextureFromFile(gD3DDevice, path.c_str(), &texture));
+	SetSprite(path);
 }
 
 Sprite::~Sprite()
