@@ -73,6 +73,7 @@
     <ClCompile Include="D3DApp.cpp" />
     <ClCompile Include="DirectInput.cpp" />
     <ClCompile Include="GameTimer.cpp" />
+    <ClCompile Include="Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.h" />
@@ -80,6 +81,7 @@
     <ClInclude Include="D3DUtils.h" />
     <ClInclude Include="DirectInput.h" />
     <ClInclude Include="GameTimer.h" />
+    <ClInclude Include="Sprite.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

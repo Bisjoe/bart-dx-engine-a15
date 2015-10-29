@@ -7,7 +7,6 @@ Component::Component()
 	components.push_back(this);
 }
 
-
 Component::~Component()
 {
 }
