@@ -6,27 +6,26 @@ Sprite::Sprite()
 	: center(0.f, 0.f, 0.f)
 	, position(0.f, 0.f, 0.f)
 	, texture(nullptr)
-	, isVisible(true)
 {
-	boxCollision.SetPosition(0.f, 0.f);
+
 }
 
 Sprite::Sprite(std::string path)
 	: center(0.f,0.f,0.f)
 	, position(0.f,0.f, 0.f)
-	, isVisible(true)
 {
 	SetSprite(path);
-	boxCollision.SetPosition(0.f, 0.f);
 }
 
 Sprite::Sprite(std::string path, float x, float y, float z)
 	: center(0.f, 0.f, 0.f)
 	, position(x, y, z)
-	, isVisible(true)
 {
+<<<<<<< HEAD
+	HR(D3DXCreateTextureFromFile(gD3DDevice, path.c_str(), &texture));
+=======
 	SetSprite(path);
-	boxCollision.SetPosition(x, y);
+>>>>>>> f58ec29ffb4937ccfe95dad2b25e6d1525093741
 }
 
 Sprite::~Sprite()
