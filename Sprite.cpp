@@ -6,22 +6,27 @@ Sprite::Sprite()
 	: center(0.f, 0.f, 0.f)
 	, position(0.f, 0.f, 0.f)
 	, texture(nullptr)
+	, isVisible(true)
 {
-
+	boxCollision.SetPosition(0.f, 0.f);
 }
 
 Sprite::Sprite(std::string path)
 	: center(0.f,0.f,0.f)
 	, position(0.f,0.f, 0.f)
+	, isVisible(true)
 {
 	SetSprite(path);
+	boxCollision.SetPosition(0.f, 0.f);
 }
 
 Sprite::Sprite(std::string path, float x, float y, float z)
 	: center(0.f, 0.f, 0.f)
 	, position(x, y, z)
+	, isVisible(true)
 {
 	SetSprite(path);
+	boxCollision.SetPosition(x, y);
 }
 
 Sprite::~Sprite()
