@@ -12,19 +12,20 @@ public:
 	Sprite(std::string path, float x, float y, float z);
 
 	void SetPosition(D3DXVECTOR3& pos){ position = pos; }
-	void SetSprite(std::string path){ HR(D3DXCreateTextureFromFile(gD3DDevice, path.c_str(), &texture)); }
+	void SetSprite(std::string path);
 
 	virtual ~Sprite();
 
 	virtual void Update(float dt){}
-	void Draw();
+	virtual void Draw();
 
 protected:
-	
 
+	D3DXIMAGE_INFO infos;
 	std::string path;
 	IDirect3DTexture9* texture;
 	D3DXVECTOR3 position;
+	RECT srcRect;
 	D3DXVECTOR3 center;
 };
 
