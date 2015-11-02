@@ -6,17 +6,16 @@ Sprite::Sprite()
 	, texture(nullptr)
 	, isVisible(true)
 {
-	boxCollision->SetPosition(0.f, 0.f);
 	boxCollision = new CRectangle(this, 0, 0, 0, 0);
 }
 
-Sprite::Sprite(std::string path)
+Sprite::Sprite(std::string path )
 	: center(0.f,0.f,0.f)
 	, position(0.f,0.f, 0.f)
 	, isVisible(true)
 {
+	boxCollision = new CRectangle(this, 0, 0, 0, 0);
 	SetSprite(path);
-	boxCollision = new CRectangle(this, 0, 0, textureInfos.Width, textureInfos.Height);
 }
 
 Sprite::Sprite(std::string path, float x, float y, float z)
@@ -24,8 +23,8 @@ Sprite::Sprite(std::string path, float x, float y, float z)
 	, position(x, y, z)
 	, isVisible(true)
 {
+	boxCollision = new CRectangle(this, x, y, 0, 0);
 	SetSprite(path);
-	boxCollision = new CRectangle(this, x, y, textureInfos.Width, textureInfos.Height);
 }
 
 Sprite::~Sprite()

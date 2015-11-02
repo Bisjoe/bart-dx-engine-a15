@@ -31,28 +31,23 @@ bool CRectangle::CollidesWith(CRectangle* const rect)
 	if (this->GetPosition().x < (rect->GetPosition().x + rect->GetWidth()) && (this->GetPosition().x + this->GetWidth()) > rect->GetPosition().x &&
 		this->GetPosition().y < (rect->GetPosition().y + rect->GetHeight()) && (this->GetPosition().y + this->GetHeight())> rect->GetPosition().y)
 	{
-		std::cout << "CollisionWidth" << std::endl;
 		areColliding = true;
 	}
 	return areColliding;
 }
 bool CRectangle::CheckCollision(Collider* const collider)
 {
-	bool isCollision = false;
+	bool isColliding = false;
 
 	//if (collider->GetType() == Type::CIRCLE)
 	//{
-	//	isCollision = static_cast<CCircle*>(collider)->CheckCollision(this);
-	//
+	//	isColliding = static_cast<CCircle*>(collider)->CheckCollision(this);
 	//}
-	 if (collider->GetType() == Type::RECTANGLE)
+	//else 
+	if (collider->GetType() == Type::RECTANGLE)
 	{
-		 //isCollision = CollidesWith(CRectangle*(collider));
-		 isCollision = CollidesWith(static_cast<CRectangle*>(collider));
-		
-		 //isCollision = true;
-		// CollidesWith(static_cast<CRectangle*>(collider));
+		isColliding = CollidesWith(static_cast<CRectangle*>(collider));
 	}
 
-	return isCollision;
+	return isColliding;
 }
