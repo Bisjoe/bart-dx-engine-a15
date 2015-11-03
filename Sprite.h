@@ -11,7 +11,7 @@ public:
 	Sprite();
 	Sprite(std::string path);
 	Sprite(std::string path, float x, float y, float z);
-	void SetVisible(bool visible){ isVisible = visible; }
+	void SetVisible(bool visible){ this->isVisible = visible; }
 	D3DXVECTOR3 GetPosition() const { return position; }
 	void SetSize(D3DXVECTOR3& scale)
 	{

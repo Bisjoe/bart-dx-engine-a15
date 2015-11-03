@@ -34,9 +34,13 @@ Sprite::~Sprite()
 
 void Sprite::Draw()
 {
-	if (texture)
+	if (isVisible)
 	{
-		HR(gD3DApp->GetSpriteBatch()->Draw(texture, 0, &center, &position, D3DCOLOR_XRGB(255, 255, 255)));
-		HR(gD3DApp->GetSpriteBatch()->Flush());
+		if (texture)
+		{
+			HR(gD3DApp->GetSpriteBatch()->Draw(texture, 0, &center, &position, D3DCOLOR_XRGB(255, 255, 255)));
+			HR(gD3DApp->GetSpriteBatch()->Flush());
+		}
 	}
+	
 }
