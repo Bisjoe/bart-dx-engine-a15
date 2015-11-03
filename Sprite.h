@@ -29,7 +29,7 @@ public:
 			D3DX_DEFAULT, D3DCOLOR_XRGB(255, 255, 255), &textureInfos, NULL,
 			&texture));
 
-		//boxCollision->SetSize(textureInfos.Width, textureInfos.Height);
+		boxCollision->SetSize(textureInfos.Width, textureInfos.Height);
 	}
 
 	virtual ~Sprite();
