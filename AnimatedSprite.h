@@ -14,7 +14,7 @@ public:
 	virtual void Draw();
 
 private:
-	
+
 	RECT initialRect;
 	bool isLooping;
 	int nbFrame;
@@ -30,4 +30,3 @@ private:
 	D3DXVECTOR3 position1;
 	float x, y, z;
 };
-
