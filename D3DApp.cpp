@@ -213,9 +213,6 @@ HRESULT D3DApp::MsgProc(UINT msg
 {
 	switch (msg)
 	{
-	case WM_LBUTTONDOWN:
-		::MessageBox(0, _T("Hello world"), _T("Hello"), MB_OK);
-		return 0;
 	case WM_KEYDOWN:
 		if (wParam == VK_ESCAPE)
 			DestroyWindow(mhMainWindow);

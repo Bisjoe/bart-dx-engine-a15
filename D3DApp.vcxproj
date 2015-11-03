@@ -69,19 +69,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="D3DApp.cpp" />
     <ClCompile Include="DirectInput.cpp" />
     <ClCompile Include="GameTimer.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Text.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Collider.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="D3DApp.h" />
     <ClInclude Include="D3DUtils.h" />
     <ClInclude Include="DirectInput.h" />
     <ClInclude Include="GameTimer.h" />
+    <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Text.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
