@@ -50,7 +50,7 @@ void AnimatedSprite::Update(float dt)
 
 
 
-	if (currentTime >= 1.0f/frameRate)
+	if (currentTime >= 1.0f / frameRate)
 	{
 		if (currentCol >= nbCol)
 		{
