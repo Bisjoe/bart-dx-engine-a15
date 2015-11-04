@@ -46,9 +46,9 @@ AnimatedSprite::~AnimatedSprite()
 
 void AnimatedSprite::Update(float dt)
 {
+	Sprite::Update(dt);
+
 	currentTime += dt;
-
-
 
 	if (currentTime >= 1.0f / frameRate)
 	{
