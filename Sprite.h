@@ -3,6 +3,7 @@
 #include "Component.h"
 #include "D3DApp.h"
 #include "Rectangle.h"
+
 class Sprite :
 	public Component
 {
@@ -17,14 +18,14 @@ public:
 	void SetPosition(D3DXVECTOR3& pos){
 		position = pos;
 		boxCollision->SetPosition(pos.x, pos.y);
-
 	}
+
 	void SetPosition(float x,float y){
 		position.x = x;
 		position.y = y;
-		
-
+		boxCollision->SetPosition(x, y);
 	}
+
 	void SetSprite(std::string path);
 	
 	virtual ~Sprite();
@@ -41,6 +42,8 @@ protected:
 	CRectangle* boxCollision;
 	RECT srcRect;
 	D3DXVECTOR3 center;
+
+private:
 	D3DXVECTOR3 position;
 	
 };
