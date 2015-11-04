@@ -40,6 +40,7 @@ AnimatedSprite::AnimatedSprite(std::string path, int srcTop, int srcLeft, float 
 	initialRect.bottom = frameHeight;
 
 	currentRect = initialRect;
+	boxCollision->SetSize(frameWidth, frameHeight);
 }
 
 AnimatedSprite::~AnimatedSprite()
