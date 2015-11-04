@@ -10,7 +10,6 @@ public:
 	~AnimatedSprite();
 	void SetAnimatedVisible(bool visible){ isVisible = visible; }
 	virtual void Update(float dt);
-	virtual void Draw();
 
 private:
 	bool isVisible;
@@ -22,7 +21,6 @@ private:
 	int frameRate;
 
 
-	RECT currentRect;
 	float currentTime;
 	int currentRow;
 	int currentCol;

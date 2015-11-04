@@ -19,7 +19,7 @@ AnimatedSprite::AnimatedSprite()
 	initialRect.right = 0;
 	initialRect.bottom = 0;
 
-	currentRect = initialRect;
+	srcRect = initialRect;
 }
 
 AnimatedSprite::AnimatedSprite(std::string path, int srcTop, int srcLeft, float frameWidth, int frameHeight, int nbRow, int nbCol, int frameRate, bool looping)
@@ -39,7 +39,7 @@ AnimatedSprite::AnimatedSprite(std::string path, int srcTop, int srcLeft, float 
 	initialRect.right = frameWidth;
 	initialRect.bottom = frameHeight;
 
-	currentRect = initialRect;
+	srcRect = initialRect;
 	boxCollision->SetSize(frameWidth, frameHeight);
 }
 
@@ -71,26 +71,10 @@ void AnimatedSprite::Update(float dt)
 		{
 			currentRow++;
 		}
-		currentRect.top = currentRow * initialRect.bottom;
-		currentRect.left = currentCol * initialRect.right;
-		currentRect.right = currentRect.left + initialRect.right;
-		currentRect.bottom = currentRect.top + initialRect.bottom;
+		srcRect.top = currentRow * initialRect.bottom;
+		srcRect.left = currentCol * initialRect.right;
+		srcRect.right = srcRect.left + initialRect.right;
+		srcRect.bottom = srcRect.top + initialRect.bottom;
 		currentTime = 0.f;
 	}
-}
-
-void AnimatedSprite::Draw()
-{
-	D3DXMATRIX rotation;
-	D3DXMatrixRotationZ(&rotation, D3DX_PI);
-	if (isVisible)
-	{
-		if (texture)
-		{
-			HR(gD3DApp->GetSpriteBatch()->Draw(texture, &currentRect, &center, &position, D3DCOLOR_XRGB(255, 255, 255)));
-			HR(gD3DApp->GetSpriteBatch()->Flush());
-			HR(gD3DApp->GetSpriteBatch()->SetTransform(&rotation));
-		}
-	}
-	
 }
