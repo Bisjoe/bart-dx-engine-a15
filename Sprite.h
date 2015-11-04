@@ -19,11 +19,14 @@ public:
 		boxCollision->SetPosition(pos.x, pos.y);
 
 	}
-	
+	void SetPosition(float x,float y){
+		position.x = x;
+		position.y = y;
+		
+
+	}
 	void SetSprite(std::string path);
 	
-	
-
 	virtual ~Sprite();
 
 	virtual void Update(float dt){}

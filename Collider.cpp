@@ -15,16 +15,10 @@ Collider::Collider(Component * gameObject, Type type, float x, float y)
 	, position(x, y)
 	, isEnabled(true)
 {
-
 	colliders.push_back(this);
 }
 
-
-Collider::~Collider()
-{
-
-}
-
+Collider::~Collider(){}
 
 void Collider::SetPosition(const float x, const float y)
 {

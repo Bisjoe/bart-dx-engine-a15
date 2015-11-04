@@ -12,6 +12,7 @@ AnimatedSprite::AnimatedSprite()
 	, currentTime(0)
 	, currentRow(0)
 	, currentCol(0)
+	, isVisible(true)
 {
 	initialRect.left = 0;
 	initialRect.top = 0;
@@ -31,6 +32,7 @@ AnimatedSprite::AnimatedSprite(std::string path, int srcTop, int srcLeft, float 
 	, currentTime(0)
 	, currentRow(0)
 	, currentCol(0)
+	, isVisible(true)
 {
 	initialRect.left = srcLeft;
 	initialRect.top = srcTop;
@@ -47,7 +49,6 @@ AnimatedSprite::~AnimatedSprite()
 void AnimatedSprite::Update(float dt)
 {
 	Sprite::Update(dt);
-
 	currentTime += dt;
 
 	if (currentTime >= 1.0f / frameRate)
@@ -79,9 +80,16 @@ void AnimatedSprite::Update(float dt)
 
 void AnimatedSprite::Draw()
 {
-	if (texture)
+	D3DXMATRIX rotation;
+	D3DXMatrixRotationZ(&rotation, D3DX_PI);
+	if (isVisible)
 	{
-		HR(gD3DApp->GetSpriteBatch()->Draw(texture, &currentRect, &center, &position, D3DCOLOR_XRGB(255, 255, 255)));
-		HR(gD3DApp->GetSpriteBatch()->Flush());
+		if (texture)
+		{
+			HR(gD3DApp->GetSpriteBatch()->Draw(texture, &currentRect, &center, &position, D3DCOLOR_XRGB(255, 255, 255)));
+			HR(gD3DApp->GetSpriteBatch()->Flush());
+			HR(gD3DApp->GetSpriteBatch()->SetTransform(&rotation));
+		}
 	}
+	
 }
