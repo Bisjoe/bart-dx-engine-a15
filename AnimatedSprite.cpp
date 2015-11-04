@@ -54,7 +54,7 @@ void AnimatedSprite::Update(float dt)
 
 	if (currentTime >= 1.0f / frameRate)
 	{
-		if (currentCol >= nbCol)
+		if (currentCol >= nbCol-1)
 		{
 			currentCol = 0;
 		}
@@ -71,6 +71,7 @@ void AnimatedSprite::Update(float dt)
 		{
 			currentRow++;
 		}
+
 		srcRect.top = currentRow * initialRect.bottom;
 		srcRect.left = currentCol * initialRect.right;
 		srcRect.right = srcRect.left + initialRect.right;
