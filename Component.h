@@ -1,7 +1,6 @@
 #pragma once
 
-#include<vector>
-#include <string>
+#include "D3DApp.h"
 
 class Component
 {
@@ -9,16 +8,24 @@ class Component
 
 public:
 	Component();
+	Component(float x, float y, float z);
 	virtual ~Component();
 	virtual void Update(float dt) = 0;
 	virtual void Draw() = 0;
+	virtual void SetPosition(D3DXVECTOR3& pos){
+		position = pos;
+	}
+	void SetPosition(float x, float y){
+		position.x = x;
+		position.y = y;
+	}
 	void SetID(std::string id){ this->id = id; }
 	const std::string GetID(){ return id; }
-	//void SetID(std::string path){ this->path = path; }
-	//std::string getID(){ return path; }
+	
 
 private:
 	static std::vector<Component*>components;
 	 std::string id;
+	 D3DXVECTOR3 position;
 };
 
