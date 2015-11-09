@@ -4,7 +4,7 @@
 CRectangle::CRectangle()
 	:Collider(nullptr, Type::RECTANGLE, 0, 0)
 	, width(0)
-	,height(0)
+	, height(0)
 {
 }
 CRectangle::CRectangle(Component* caller, float x, float y, float width, float height)
@@ -28,12 +28,6 @@ bool CRectangle::Contains(const float x, const float y)
 bool CRectangle::CollidesWith(CRectangle* const rect)
 {
 	bool areColliding = false;
-
-	std::cout << "Player X: " << position.x << std::endl;
-	std::cout << "Snake X: " << rect->GetPosition().x << std::endl;
-
-	std::cout << "Player Y: " << position.y << std::endl;
-	std::cout << "Snake: Y" << rect->GetPosition().y << std::endl;
 
 	if (this->GetPosition().x < (rect->GetPosition().x + rect->GetWidth()) && (this->GetPosition().x + this->GetWidth()) > rect->GetPosition().x &&
 		this->GetPosition().y < (rect->GetPosition().y + rect->GetHeight()) && (this->GetPosition().y + this->GetHeight())> rect->GetPosition().y)

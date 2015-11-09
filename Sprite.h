@@ -26,6 +26,11 @@ public:
 		boxCollision->SetPosition(x, y);
 	}
 
+	D3DXVECTOR3 SetSize()
+	{
+		return D3DXVECTOR3(infos.Width, infos.Height, 0.f);
+	}
+
 	void SetSprite(std::string path);
 	
 	virtual ~Sprite();
