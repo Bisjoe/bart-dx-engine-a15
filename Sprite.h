@@ -17,7 +17,7 @@ public:
 
 	void SetPosition(D3DXVECTOR3& pos){
 		Component::SetPosition(pos);
-		//position = pos;
+		position = pos;
 		boxCollision->SetPosition(pos.x, pos.y);
 	}
 
