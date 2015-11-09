@@ -16,10 +16,12 @@ public:
 	D3DXVECTOR3 GetPosition() const { return position; }
 
 	void SetPosition(D3DXVECTOR3& pos){
-		position = pos;
+		Component::SetPosition(pos);
+		//position = pos;
 		boxCollision->SetPosition(pos.x, pos.y);
 	}
 
+<<<<<<< HEAD
 	void SetPosition(float x,float y){
 		position.x = x;
 		position.y = y;
@@ -31,6 +33,8 @@ public:
 		return D3DXVECTOR3(infos.Width, infos.Height, 0.f);
 	}
 
+=======
+>>>>>>> 1e37756406014ea309a8fa04215414c33416eaf8
 	void SetSprite(std::string path);
 	
 	virtual ~Sprite();
