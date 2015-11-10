@@ -9,7 +9,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-
+#include <vector>
 // Includes C
 #include <tchar.h>
 #include <time.h>

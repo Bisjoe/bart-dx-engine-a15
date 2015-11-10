@@ -16,14 +16,9 @@ public:
 	D3DXVECTOR3 GetPosition() const { return position; }
 
 	void SetPosition(D3DXVECTOR3& pos){
+		Component::SetPosition(pos);
 		position = pos;
 		boxCollision->SetPosition(pos.x, pos.y);
-	}
-
-	void SetPosition(float x,float y){
-		position.x = x;
-		position.y = y;
-		boxCollision->SetPosition(x, y);
 	}
 
 	void SetSprite(std::string path);
