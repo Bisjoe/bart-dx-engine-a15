@@ -1,8 +1,9 @@
 #include "Sprite.h"
 
 Sprite::Sprite()
-	: center(0.f, 0.f, 0.f)
-	, position(0.f, 0.f, 0.f)
+	:Component()
+	,center(0.f, 0.f, 0.f)
+	//position(0.f, 0.f, 0.f)
 	, texture(nullptr)
 	, isVisible(true)
 {
@@ -11,8 +12,9 @@ Sprite::Sprite()
 }
 
 Sprite::Sprite(std::string path)
-	: center(0.f,0.f,0.f)
-	, position(0.f,0.f, 0.f)
+	:Component()
+	,center(0.f,0.f,0.f)
+	//, position(0.f,0.f, 0.f)
 	, isVisible(true)
 {
 	boxCollision = new CRectangle(this, 0, 0, infos.Width, infos.Height);
@@ -20,8 +22,9 @@ Sprite::Sprite(std::string path)
 }
 
 Sprite::Sprite(std::string path, float x, float y, float z)
-	: center(0.f, 0.f, 0.f)
-	, position(x, y, z)
+	:Component()
+	,center(0.f, 0.f, 0.f)
+	//, position(x, y, z)
 	, isVisible(true)
 {
 	boxCollision = new CRectangle(this, x, y, infos.Width, infos.Height);
@@ -55,7 +58,7 @@ void Sprite::Draw()
 	{
 		if (texture)
 		{
-			HR(gD3DApp->GetSpriteBatch()->Draw(texture, &srcRect, &center, &position, D3DCOLOR_XRGB(255, 255, 255)));
+			gD3DApp->GetSpriteBatch()->Draw(texture, &srcRect, &center, &Component::GetPosition(), D3DCOLOR_XRGB(255, 255, 255));
 			HR(gD3DApp->GetSpriteBatch()->Flush());
 		}
 	}

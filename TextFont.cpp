@@ -28,7 +28,6 @@ TextFont::TextFont(std::string text, std::string fontName)
 
 	D3DXFONT_DESC fontDesc;
 	fontDesc.Width = 40;
-	fontDesc.Weight = 100;
 	fontDesc.Height = 40;
 	fontDesc.MipLevels = 0;
 	fontDesc.Italic = false;
@@ -44,6 +43,8 @@ TextFont::TextFont(std::string text, std::string fontName)
 TextFont::TextFont(std::string text, float x, float y, float z, float width, float heigth, std::string fontName)
 	: Component(x, y, z)
 {
+	this->text = text;
+
 	D3DXFONT_DESC fontDesc;
 	fontDesc.Width = width;
 	fontDesc.Height = heigth;
@@ -66,6 +67,8 @@ void TextFont::Draw()
 {
 	RECT formatRect;
 	GetClientRect(gD3DApp->GetMainWindowHandle(), &formatRect);
+	formatRect.left = Component::GetPosition().x;
+	formatRect.top = Component::GetPosition().y;
 
 	HR(mFont->DrawText(0, _T(text.c_str())
 		, -1, &formatRect

@@ -13,11 +13,10 @@ public:
 	Sprite(std::string path, float x, float y, float z);
 
 	void SetVisible(bool visible){ isVisible = visible; }
-	D3DXVECTOR3 GetPosition() const { return position; }
+
 
 	void SetPosition(D3DXVECTOR3& pos){
 		Component::SetPosition(pos);
-		position = pos;
 		boxCollision->SetPosition(pos.x, pos.y);
 	}
 
@@ -37,9 +36,5 @@ protected:
 	CRectangle* boxCollision;
 	RECT srcRect;
 	D3DXVECTOR3 center;
-
-private:
-	D3DXVECTOR3 position;
-	
 };
 

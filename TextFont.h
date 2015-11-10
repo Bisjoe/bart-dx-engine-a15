@@ -19,8 +19,7 @@ protected:
 	std::string text;
 	std::string fontName;
 
-private:
-	D3DXVECTOR3 position;
+
 
 };
 

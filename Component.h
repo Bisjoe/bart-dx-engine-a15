@@ -12,6 +12,7 @@ public:
 	virtual ~Component();
 	virtual void Update(float dt) = 0;
 	virtual void Draw() = 0;
+	D3DXVECTOR3 GetPosition() const { return position; }
 	virtual void SetPosition(D3DXVECTOR3& pos){
 		position = pos;
 	}
