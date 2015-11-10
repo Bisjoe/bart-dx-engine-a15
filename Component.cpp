@@ -3,6 +3,7 @@
 std::vector<Component*>Component::components;
 
 Component::Component()
+	: position(0.f, 0.f, 0.f)
 {
 	components.push_back(this);
 }
