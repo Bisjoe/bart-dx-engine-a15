@@ -59,12 +59,9 @@ void Sprite::SetSprite(std::string path, float top, float left)
 }
 void Sprite::Draw()
 {	
-	if (isVisible)
+	if (texture)
 	{
-		if (texture)
-		{
-			gD3DApp->GetSpriteBatch()->Draw(texture, &srcRect, &center, &Component::GetPosition(), D3DCOLOR_XRGB(255, 255, 255));
-			HR(gD3DApp->GetSpriteBatch()->Flush());
-		}
+		gD3DApp->GetSpriteBatch()->Draw(texture, &srcRect, &center, &Component::GetPosition(), D3DCOLOR_XRGB(255, 255, 255));
+		HR(gD3DApp->GetSpriteBatch()->Flush());
 	}
 }
