@@ -16,7 +16,7 @@ TextFont::TextFont()
 	fontDesc.OutputPrecision = OUT_DEFAULT_PRECIS;
 	fontDesc.Quality = DEFAULT_QUALITY;
 	fontDesc.PitchAndFamily = DEFAULT_PITCH | FF_DONTCARE;
-	strcpy_s(fontDesc.FaceName, _T("Time new Roman"));
+	strcpy_s(fontDesc.FaceName, _T("ceriph 05_64"));
 
 	D3DXCreateFontIndirect(gD3DDevice, &fontDesc, &mFont);
 }
