@@ -15,7 +15,7 @@ public:
 		for (int i = 0; i < min; i++)
 		{
 			T* newObj = new T();
-			//newObj->SetActive(false);
+			newObj->SetActive(false);
 			resources.push_back(newObj);
 
 		}

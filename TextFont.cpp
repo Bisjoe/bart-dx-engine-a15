@@ -65,15 +65,12 @@ TextFont::~TextFont()
 
 void TextFont::Draw()
 {
-	if (GetIsVisible())
-	{
-		RECT formatRect;
-		GetClientRect(gD3DApp->GetMainWindowHandle(), &formatRect);
-		formatRect.left = Component::GetPosition().x;
-		formatRect.top = Component::GetPosition().y;
-		HR(mFont->DrawText(0, _T(text.c_str())
-			, -1, &formatRect
-			, DT_CENTER | DT_VCENTER
-			, D3DCOLOR_XRGB(256, 256, 256)));
-	}
+	RECT formatRect;
+	GetClientRect(gD3DApp->GetMainWindowHandle(), &formatRect);
+	formatRect.left = Component::GetPosition().x;
+	formatRect.top = Component::GetPosition().y;
+	HR(mFont->DrawText(0, _T(text.c_str())
+		, -1, &formatRect
+		, DT_CENTER | DT_VCENTER
+		, D3DCOLOR_XRGB(256, 256, 256)));
 }

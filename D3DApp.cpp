@@ -282,7 +282,8 @@ void D3DApp::Update(float dt)
 {
 	for (auto x: Component::components )
 	{
-		x->Update(dt);
+		if (x->isActive)
+			x->Update(dt);
 	}
 }
 
@@ -290,7 +291,8 @@ void D3DApp::Draw()
 {
 	for (auto x : Component::components)
 	{
-		x->Draw();
+		if (x->isVisible)
+			x->Draw();
 	}
 }
 
