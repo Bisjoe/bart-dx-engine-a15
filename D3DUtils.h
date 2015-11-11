@@ -36,7 +36,7 @@ extern IDirect3DDevice9* gD3DDevice;
 #if defined(DEBUG) | defined(_DEBUG)
 #ifndef HR
 #define HR(x)										\
-{													\
+{											\
 	HRESULT hr = x;									\
 	if(FAILED(hr))									\
 	{												\
