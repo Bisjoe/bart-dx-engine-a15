@@ -4,6 +4,7 @@ std::vector<Component*>Component::components;
 
 Component::Component()
 	: position(0.f, 0.f, 0.f)
+	, isVisible(true)
 {
 	components.push_back(this);
 }
