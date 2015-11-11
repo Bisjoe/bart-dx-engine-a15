@@ -10,6 +10,7 @@ Component::Component()
 }
 Component::Component(float x, float y, float z)
 	: position(x, y, z)
+	, isVisible(true)
 {
 	components.push_back(this);
 }
