@@ -77,6 +77,7 @@
     <ClCompile Include="GameTimer.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="TextFont.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedSprite.h" />
@@ -89,6 +90,7 @@
     <ClInclude Include="Pool.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="TextFont.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

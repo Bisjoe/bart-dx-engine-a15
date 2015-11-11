@@ -14,7 +14,7 @@ public:
 	virtual void Update(float dt);
 
 private:
-	bool isVisible;
+	//bool isVisible;
 	RECT initialRect;
 	bool isLooping;
 	int nbFrame;
@@ -27,4 +27,9 @@ private:
 
 	D3DXVECTOR3 position1;
 	float x, y, z;
+	//bool isVisible;
+
+
+protected:
+	bool isVisible;
 };

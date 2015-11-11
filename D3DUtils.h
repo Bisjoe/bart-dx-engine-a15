@@ -9,7 +9,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-
+#include <vector>
 // Includes C
 #include <tchar.h>
 #include <time.h>
@@ -36,7 +36,7 @@ extern IDirect3DDevice9* gD3DDevice;
 #if defined(DEBUG) | defined(_DEBUG)
 #ifndef HR
 #define HR(x)										\
-{													\
+{											\
 	HRESULT hr = x;									\
 	if(FAILED(hr))									\
 	{												\
