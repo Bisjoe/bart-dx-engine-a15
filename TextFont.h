@@ -17,9 +17,5 @@ protected:
 	ID3DXFont*  mFont;
 	std::string text;
 	std::string fontName;
-<<<<<<< HEAD
-=======
-
->>>>>>> be8ab738bc67367ac016370e82a4a4e421d80439
 };
 
