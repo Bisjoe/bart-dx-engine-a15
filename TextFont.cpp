@@ -2,7 +2,7 @@
 
 
 TextFont::TextFont()
-	:Component()
+	: Component()
 	, mFont(nullptr)
 	, text(nullptr)
 	, fontName(nullptr)
@@ -16,7 +16,7 @@ TextFont::TextFont()
 	fontDesc.OutputPrecision = OUT_DEFAULT_PRECIS;
 	fontDesc.Quality = DEFAULT_QUALITY;
 	fontDesc.PitchAndFamily = DEFAULT_PITCH | FF_DONTCARE;
-	strcpy_s(fontDesc.FaceName, _T("Time new Roman"));
+	strcpy_s(fontDesc.FaceName, _T("ceriph 05_64"));
 
 	D3DXCreateFontIndirect(gD3DDevice, &fontDesc, &mFont);
 }
@@ -69,7 +69,6 @@ void TextFont::Draw()
 	GetClientRect(gD3DApp->GetMainWindowHandle(), &formatRect);
 	formatRect.left = Component::GetPosition().x;
 	formatRect.top = Component::GetPosition().y;
-
 	HR(mFont->DrawText(0, _T(text.c_str())
 		, -1, &formatRect
 		, DT_CENTER | DT_VCENTER

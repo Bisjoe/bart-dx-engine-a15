@@ -9,6 +9,8 @@ public:
 	AnimatedSprite(std::string path, int srcTop, int srcLeft, float frameWidth, int frameHeight, int nbRow, int nbCol, int frameRate, bool looping);
 	~AnimatedSprite();
 	void SetAnimatedVisible(bool visible){ isVisible = visible; }
+
+	virtual void Start(){}
 	virtual void Update(float dt);
 
 private:
@@ -19,8 +21,6 @@ private:
 	int nbRow;
 	int nbCol;
 	int frameRate;
-
-
 	float currentTime;
 	int currentRow;
 	int currentCol;
