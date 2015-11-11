@@ -21,8 +21,7 @@ public:
 	}
 
 	void SetPosition(float x,float y){
-		position.x = x;
-		position.y = y;
+		Component::SetPosition(x, y);
 		boxCollision->SetPosition(x, y);
 	}
 
