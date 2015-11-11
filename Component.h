@@ -10,6 +10,7 @@ class Component
 public:
 	Component();
 	virtual ~Component();
+	virtual void Start(){}
 	virtual void Update(float dt) = 0;
 	virtual void Draw() = 0;
 	void SetID(std::string id){ this->id = id; }

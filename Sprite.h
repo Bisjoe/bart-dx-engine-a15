@@ -26,10 +26,13 @@ public:
 		boxCollision->SetPosition(x, y);
 	}
 
+	CRectangle* GetBoxCollision() { return boxCollision; }
+
 	void SetSprite(std::string path);
 	
 	virtual ~Sprite();
 
+	virtual void Start(){}
 	virtual void Update(float dt){}
 	virtual void Draw();
 
