@@ -15,7 +15,8 @@ public:
 		for (int i = 0; i < min; i++)
 		{
 			T* newObj = new T();
-			newObj->SetActive(false);
+			newObj->SetEnable(false);
+			newObj->SetPool(this);
 			resources.push_back(newObj);
 
 		}
@@ -36,6 +37,9 @@ public:
 		{
 			std::cout << "Reusing existing." << std::endl;
 			T* resource = resources.front();
+
+			resource->SetEnable(true);
+
 			resources.pop_front();
 			return resource;
 		}
@@ -44,7 +48,7 @@ public:
 	void returnResource(T* object)
 	{
 		object->Reset();
-		object->SetActive(false);
+		object->SetEnable(false);
 		resources.push_back(object);
 	}
 
