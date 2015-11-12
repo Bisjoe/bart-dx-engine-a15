@@ -36,5 +36,6 @@ std::vector<Collider*> Collider::LookForCollisions()
 			collidees.push_back(col);
 		}
 	}
+	
 	return collidees;
 }

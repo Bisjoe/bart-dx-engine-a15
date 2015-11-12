@@ -17,6 +17,16 @@ public:
 		boxCollision->SetPosition(pos.x, pos.y);
 	}
 
+	void SetPosition(float x,float y){
+		Component::SetPosition(x, y);
+		boxCollision->SetPosition(x, y);
+	}
+
+	D3DXVECTOR3 SetSize()
+	{
+		return D3DXVECTOR3(infos.Width, infos.Height, 0.f);
+	}
+
 	void SetSprite(std::string path);
 	void SetSprite(std::string path, float top, float left);
 	
