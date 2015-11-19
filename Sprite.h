@@ -12,15 +12,23 @@ public:
 	Sprite(std::string path);
 	Sprite(std::string path, float x, float y, float z);
 
-	void SetVisible(bool visible){ isVisible = visible; }
-
-
 	void SetPosition(D3DXVECTOR3& pos){
 		Component::SetPosition(pos);
 		boxCollision->SetPosition(pos.x, pos.y);
 	}
 
+	void SetPosition(float x,float y){
+		Component::SetPosition(x, y);
+		boxCollision->SetPosition(x, y);
+	}
+
+	D3DXVECTOR3 SetSize()
+	{
+		return D3DXVECTOR3(infos.Width, infos.Height, 0.f);
+	}
+
 	void SetSprite(std::string path);
+	void SetSprite(std::string path, float top, float left);
 	
 	virtual ~Sprite();
 
@@ -32,7 +40,6 @@ protected:
 	D3DXIMAGE_INFO infos;
 	std::string path;
 	IDirect3DTexture9* texture;
-	bool isVisible;
 	CRectangle* boxCollision;
 	RECT srcRect;
 	D3DXVECTOR3 center;

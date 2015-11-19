@@ -87,6 +87,8 @@
     <ClInclude Include="D3DUtils.h" />
     <ClInclude Include="DirectInput.h" />
     <ClInclude Include="GameTimer.h" />
+    <ClInclude Include="IPoolableObject.h" />
+    <ClInclude Include="Pool.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="TextFont.h" />

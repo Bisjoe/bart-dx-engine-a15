@@ -4,7 +4,7 @@
 CRectangle::CRectangle()
 	:Collider(nullptr, Type::RECTANGLE, 0, 0)
 	, width(0)
-	,height(0)
+	, height(0)
 {
 }
 CRectangle::CRectangle(Component* caller, float x, float y, float width, float height)
