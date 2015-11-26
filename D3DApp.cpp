@@ -61,6 +61,8 @@ D3DApp::~D3DApp()
 	ReleaseCOM(mD3DObject);
 	ReleaseCOM(spriteBatch);
 	delete gTimer;
+
+	DestroyAllVertexDeclaration();
 }
 
 void D3DApp::InitMainWindow()
@@ -154,6 +156,8 @@ void D3DApp::InitDirect3D()
 	}
 
 	HR(D3DXCreateSprite(gD3DDevice, &spriteBatch));
+
+	InitAllVertexDeclaration();
 	OnResetDevice();
 }
 
@@ -260,13 +264,16 @@ void D3DApp::OnResetDevice()
 {
 	RECT r;
 	D3DXMATRIX view, proj;
-	D3DXVECTOR3 pos(0.f, 0.f, 1000.f);
+	D3DXVECTOR3 pos(0.f, 0.f, -10.f);
 	D3DXVECTOR3 up(0.f, 1.f, 0.f);
 	D3DXVECTOR3 target(0.f, 0.f, 0.f);
 
 	GetClientRect(GetMainWindowHandle(), &r);
 	D3DXMatrixLookAtLH(&view, &pos, &target, &up);
-	D3DXMatrixOrthoLH(&proj, (float)r.right, (float)r.bottom, 1.f, 5000.f);
+
+	D3DXMatrixPerspectiveFovLH(&proj, D3DX_PI / 4,
+		(float)mD3Dpp.BackBufferWidth / (float)mD3Dpp.BackBufferHeight, 0.01f, 5000.0f);
+	//D3DXMatrixOrthoLH(&proj, (float)r.right, (float)r.bottom, 1.f, 5000.f);
 
 	HR(gD3DDevice->SetRenderState(D3DRS_LIGHTING, false));
 	HR(gD3DDevice->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE));
@@ -274,7 +281,6 @@ void D3DApp::OnResetDevice()
 	HR(gD3DDevice->SetTransform(D3DTS_VIEW, &view));
 	HR(gD3DDevice->SetTransform(D3DTS_PROJECTION, &proj));
 
-	
 	HR(spriteBatch->OnResetDevice());
 }
 

@@ -18,8 +18,8 @@ public:
 	// Getters / Setters
 	HWND GetMainWindowHandle()		{ return mhMainWindow; }
 	HINSTANCE GetInstanceHandle()	{ return mhInstance; }
-	bool GetDeviceLost();
 	ID3DXSprite* GetSpriteBatch()	{ return spriteBatch; }
+	bool GetDeviceLost();
 
 	// Methods
 	virtual bool CheckDeviceCaps()	{ return true; }

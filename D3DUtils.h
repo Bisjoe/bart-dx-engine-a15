@@ -5,17 +5,21 @@
 #include <d3dx9.h>
 #include <DxErr.h>
 
-// Includes STL
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <vector>
 // Includes C
 #include <tchar.h>
 #include <time.h>
 
+// Includes STL
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <vector>
+
+// Includes Customs
 #include "DirectInput.h"
 #include "GameTimer.h"
+#include "Vertex.h"
 
 #define SKIP continue
 

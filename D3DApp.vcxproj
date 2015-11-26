@@ -75,9 +75,12 @@
     <ClCompile Include="D3DApp.cpp" />
     <ClCompile Include="DirectInput.cpp" />
     <ClCompile Include="GameTimer.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Plane.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="TextFont.cpp" />
+    <ClCompile Include="Vertex.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedSprite.h" />
@@ -88,10 +91,13 @@
     <ClInclude Include="DirectInput.h" />
     <ClInclude Include="GameTimer.h" />
     <ClInclude Include="IPoolableObject.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="Plane.h" />
     <ClInclude Include="Pool.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="TextFont.h" />
+    <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
